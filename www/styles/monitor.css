@@ -1,0 +1,322 @@
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+html {
+    /* common technique to easaly convert px into rem, dividing each value by 10, so for fonts default browser size,
+   it's 10/16px=0,625
+   for root font size
+   .625*10 = 10
+   .625*20 = 12.5  */
+    /* This defines what 1rem is | 1 rem = 10px*/
+    font-size: 62.5%;
+}
+
+/* ==========================================================================
+   Structure
+   ========================================================================== */
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 181px;
+    z-index: 99;
+    position: relative;
+}
+
+.header .logo {
+    /* width: 565px;
+
+    height: 165px;*/
+    max-width: 100%;
+    margin: 0 auto;
+    display: table-cell;
+}
+
+/* ==========================================================================
+   Services
+   ========================================================================== */
+
+.device {
+    height: 100%;
+    margin: 20px auto 0 auto;
+}
+
+.device ul.services {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.device ul.services li {
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+/*** Service ***/
+.service {
+    width: 100%;
+    height: 15rem;
+    display: table;
+}
+
+/*.servicePopUp { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.9);}
+
+.servicePopUp > div { height: 100%; margin-left: auto; margin-right: auto;
+   display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center;
+}*/
+
+.desk-container {
+    width: 30%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    display: table;
+    position: relative;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.desk-container .desk-content {
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.desk-container .desk-content .desk-label {
+    margin-top: -12px;
+    text-transform: uppercase;
+}
+
+.desk-container .desk-content .desk-code {
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+.desk-container.service-modal {
+    height: 120px;
+    background: #d2021b;
+}
+
+.desk-container.service-modal .desk-content .desk-label {
+    color: #fff;
+}
+
+.service-modal.desk-container:before {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAACWCAYAAAC/6YqcAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUU3MThENDNFN0I1MTFFNTg3RUFFRUM2QTRDODY4MEUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUU3MThENDRFN0I1MTFFNTg3RUFFRUM2QTRDODY4MEUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBRTcxOEQ0MUU3QjUxMUU1ODdFQUVFQzZBNEM4NjgwRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBRTcxOEQ0MkU3QjUxMUU1ODdFQUVFQzZBNEM4NjgwRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrgxtMEAAAVnSURBVHja7JprTBxVFMfv7Mywj0BjKmyIWAtBWxVRfCw2EjRtY78osUkJjSFNzK6YdCPRLYhJK8W+rDUoHxpxQ2NiK4Glhq4mNmgbVsP6oZQIBuuXggnBVytIm1bY945nNnfI7brdznTnEZp7k39mmJA9vzn3f+ecubtofHz8LEKoCvQAqAR0NygfZAaxIEYQBKSVTMjgQQEoAAWgABSAAlAACkABODn/NDc3J+vD7Hb78rnY79EpoAAUgAJQAApAASgABaAAFIACUIAVDyBgGQIgGJUBRm8IExGYyQAhfl0j6AnAEHPP6OkBEsBEXhdHUVGRZgAcDsoS4giIJIZA0lTI3S2RnQH4XIYIzOFzHh+XTZqigKF2NkzJZJIhgvNYeQSMSTImCaEWCAcAJhwwDkpgCTj90hFJR8yQmhIJIpdpYSbtlVFPpd01PDx8Af6OgJZAIXwew0pIAJOmkqwr49HkHxKgzFUwv8B3jVw80dzcvAGn3IJlxpnhienQaBkmkqip29/d2dm5lWVZPg3CQniCgztkQYz6j2JI2Za2rv29vb07rVarGNiKZc6UDYAwqQHyv2JU0di6MxAIHCwuLl6VloE8YnlKyhmCuZmpmGerF9yJ+YZgMPgn/BnFpiSNGcfGlFZNyqDKTXizejxyfrV3yfZ1fX19Bb5zawZzSplgVJsCciQmLlj2/fzXgMfj2Yjn3pplSlLTobR43rIlS0zNmFy+QLfX623EQUlzksY0ScVLCYSsnjB5eR7VtH20x+/3v1lYWGjL8qxgVDNhxpGXh8IjA2fAFx2zs7NXsTnD+CgZNQYZSMrOQIJV8ICLRpGlZtsWeGx7a2tr1xLmvMGYUtHSpi2Hp2bowY2P+Xy+T10uVxU2oJmopIpWxe29F4DJ/llTXfLuI9XH29vbn8cB+TRDav9icqVlv9m5xB7t6+tz4kus0sKV85vR9a5jjOP0D7vHxsbeKS0t5QkQ/V7NQv1foYK295ughnxcV1dXYMi7YSQ4iiy/zm5yOBxP4iUpuytWZYQr1sU//3aocW/nkWG8KuK6AIg9deTFTVc/4JbqBjuPTOHPjOiSgQTHovCr26d3nPG/PD09fVm6LPfuc/JA1GZFl1pdZ7cOntgGwa/g3uCGBlazDITvKUIXX2v4xHVoX3cEBjZdeqOiDUD4qcrk0OYn3urYu3sIB4qQhQhnAKkOIEB9iTW8sNSFrrn6D7/3Ew4UIaphjGjPBFUB4jyHEi1Nv799LuCCh81vOM1kGY4SqReU7CncEiBaYEORAy2jrxz9sGVqamo+Q3By3pdf3+QyZAUIrylGl/a4fdvfeP1wKBSKpXXH0nmcbEAUtALZASK1DmH0pecOtja7T4LRyY7nX5ENgsYyV2ohN4CkmD5nQ+RLu3XXoV2e73Bar4OuiXVHSbulGEA0G3+gZa7j3PfuU8dOTcKlBTEwBI0ircZE3n2C2JiO3bVemOgd+AWq2Wa4/BBolZY/aJaEfrSVCefv3yAEvhj8pry8vAYCPwy6V4/gKYCJHe6Yr6//uNlsfhoCV4LKxQ5XN4Cenp7PIOAzoMdB60Cr9QouiquqqlpL7BHx2O367ZaLr3JEJfsbqOK6AsAQ8N3HcSaQERmQuhg+Pz+f0xWA2AtM7XYsLi5a9AZARA0XZXY6nYxRAKkRDAY5vQEQAYKgyTQMQBpsWVkZYyQAmpmZYQ0FQDp9p5gtCMMo7a/U3ifMZQPyjgFAhgNo7QNZGVD7q7qVNQVaZ0G1DIiAol0k6bJFo0ZWOL0DrlwTUgAKQAEoAAWgAHcsgKx+QO6vpm7nl390CigABaAAFIACUAAKQAEMB/hPgAEAreqARB72UIMAAAAASUVORK5CYII=") no-repeat center;
+}
+
+.info-container {
+    width: 60%;
+    height: 100%;
+    float: left;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.info-container {
+    margin-left: 0px;
+}
+
+.info-container .name {
+    width: 100%;
+    display: table;
+    margin-top: -6px;
+}
+
+.info-container .content-code {
+    width: 100%;
+    height: 60px;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+.info-container .content-code div {
+    display: inline-block;
+    float: left;
+}
+
+.info-container.service-modal {
+    width: 100%;
+}
+
+.info-container.service-modal>div {
+    margin-left: 15px;
+}
+
+.info-container.service-modal .name {
+    margin-top: 20px;
+    font-size: 4em;
+    line-height: normal;
+}
+
+.info-container.service-modal .content-code {
+    height: auto;
+    display: table;
+    padding-bottom: 20px;
+    margin-top: 0;
+    font-size: 9.5em;
+    line-height: 150px;
+}
+
+.info-container.service-modal .content-code .code {
+    margin-left: -8px;
+}
+
+.info-container.ticket-modal {
+    background: #8e0213;
+}
+
+.info-container.ticket-modal .desk-content {
+    height: 120px;
+    margin: 0 auto;
+}
+
+.info-container.ticket-modal .desk-content .desk-code {
+    font-family: "MuseoSans700";
+    font-size: 7em;
+    color: #fff;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+    width: 100%;
+    height: 9.8em;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer>div {
+    width: 565px;
+    height: 100%;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.footer>div .footer-date {
+    float: left;
+    margin: 45px 0 0 30px;
+}
+
+.footer>div .footer-time {
+    float: right;
+    margin: 21px 30px 0 0;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* tela 410 */
+@media screen and (max-width: 479px) {
+
+    .device,
+    .servicePopUp>div {
+        width: 420px;
+    }
+
+    .desk-container:before {
+        right: -20%;
+    }
+
+    .info-container.service-modal .content-code {
+        font-size: 7.5em;
+        line-height: 110px;
+    }
+
+    .desk-container.service-modal .desk-content .desk-label {
+        font-size: 2em;
+    }
+
+    .info-container.service-modal .name {
+        font-size: 2.5em;
+    }
+}
+
+/* tela 480 */
+@media screen and (min-width: 480px) {
+
+    .device,
+    .servicePopUp>div {
+        width: 440px;
+    }
+
+    .desk-container:before {
+        right: -19%;
+    }
+
+    .info-container.service-modal .content-code {
+        font-size: 7.5em;
+        line-height: 110px;
+    }
+
+    .desk-container.service-modal .desk-content .desk-label {
+        font-size: 2.2em;
+    }
+
+    .info-container.service-modal .name {
+        font-size: 2.7em;
+    }
+}
+
+/* tela 570 */
+@media screen and (min-width: 560px) {
+
+    .device,
+    .servicePopUp>div {
+        width: 565px;
+    }
+
+    .desk-container:before {
+        right: -16%;
+    }
+
+    .desk-container.service-modal .desk-content .desk-label {
+        font-size: 2.5em;
+    }
+
+    .info-container.service-modal .content-code {
+        font-size: 9.5em;
+        line-height: 120px;
+    }
+
+    .info-container.service-modal .name {
+        font-size: 3.2em;
+    }
+}
